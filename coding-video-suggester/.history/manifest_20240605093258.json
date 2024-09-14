@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Coding Video Suggester",
+  "version": "1.0",
+  "description": "Suggests coding-related videos on YouTube.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
